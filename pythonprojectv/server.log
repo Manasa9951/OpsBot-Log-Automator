@@ -1,0 +1,44 @@
+[2025-07-14 00:01:03] INFO     UserService     - User 'alice' logged in successfully from 192.168.1.10
+[2025-07-14 00:01:45] INFO     DiskMonitor     - Disk usage at 43% on /dev/sda1
+[2025-07-14 00:03:12] INFO     WebServer       - GET /api/health 200 OK (12ms)
+[2025-07-14 00:05:00] ERROR    DatabasePool    - Connection timeout after 30s — retrying (attempt 1/3)
+[2025-07-14 00:05:31] ERROR    DatabasePool    - Connection timeout after 30s — retrying (attempt 2/3)
+[2025-07-14 00:06:02] ERROR    DatabasePool    - Connection timeout after 30s — retrying (attempt 3/3)
+[2025-07-14 00:06:03] CRITICAL DatabasePool    - All DB connections exhausted. Service degraded.
+[2025-07-14 00:07:15] INFO     WebServer       - GET /api/users 200 OK (34ms)
+[2025-07-14 00:08:44] INFO     UserService     - User 'bob' logged in successfully from 10.0.0.22
+[2025-07-14 00:09:01] FAILED LOGIN AuthModule  - Invalid password for user 'admin' from IP 203.0.113.45 (attempt 1)
+[2025-07-14 00:09:03] FAILED LOGIN AuthModule  - Invalid password for user 'admin' from IP 203.0.113.45 (attempt 2)
+[2025-07-14 00:09:05] FAILED LOGIN AuthModule  - Invalid password for user 'admin' from IP 203.0.113.45 (attempt 3)
+[2025-07-14 00:09:07] FAILED LOGIN AuthModule  - Invalid password for user 'admin' from IP 203.0.113.45 (attempt 4)
+[2025-07-14 00:09:09] FAILED LOGIN AuthModule  - Invalid password for user 'admin' from IP 203.0.113.45 (attempt 5)
+[2025-07-14 00:09:11] CRITICAL AuthModule      - Brute-force threshold exceeded for IP 203.0.113.45. Account 'admin' locked.
+[2025-07-14 00:10:00] INFO     Scheduler       - Nightly backup job started
+[2025-07-14 00:11:22] INFO     WebServer       - POST /api/login 200 OK (88ms)
+[2025-07-14 00:13:00] INFO     Scheduler       - Nightly backup completed successfully (2.1 GB)
+[2025-07-14 00:15:17] ERROR    PaymentService  - Stripe API returned 402: Payment required. Transaction ID: TXN-88821
+[2025-07-14 00:16:45] INFO     CacheService    - Redis cache warmed. 1,204 keys loaded.
+[2025-07-14 00:18:00] INFO     WebServer       - GET /api/products 200 OK (19ms)
+[2025-07-14 00:20:30] FAILED LOGIN AuthModule  - Invalid password for user 'root' from IP 198.51.100.9 (attempt 1)
+[2025-07-14 00:20:32] FAILED LOGIN AuthModule  - Invalid password for user 'root' from IP 198.51.100.9 (attempt 2)
+[2025-07-14 00:20:34] FAILED LOGIN AuthModule  - Invalid password for user 'root' from IP 198.51.100.9 (attempt 3)
+[2025-07-14 00:20:36] CRITICAL AuthModule      - Brute-force threshold exceeded for IP 198.51.100.9. Account 'root' locked.
+[2025-07-14 00:22:10] INFO     UserService     - User 'carol' logged in successfully from 192.168.1.55
+[2025-07-14 00:24:00] INFO     DiskMonitor     - Disk usage at 44% on /dev/sda1
+[2025-07-14 00:25:19] ERROR    EmailService    - SMTP relay rejected message for user@example.com: 550 spam detected
+[2025-07-14 00:27:03] INFO     WebServer       - GET /api/orders 200 OK (27ms)
+[2025-07-14 00:29:44] INFO     UserService     - User 'dave' password changed successfully
+[2025-07-14 00:30:01] FAILED LOGIN AuthModule  - Invalid password for user 'dave' from IP 10.20.30.40 (attempt 1)
+[2025-07-14 00:30:14] INFO     WebServer       - GET /static/main.css 304 Not Modified (3ms)
+[2025-07-14 00:31:07] ERROR    StorageService  - S3 bucket 'prod-assets' returned AccessDenied for key 'reports/q2.pdf'
+[2025-07-14 00:33:22] INFO     WebServer       - GET /api/health 200 OK (10ms)
+[2025-07-14 00:35:00] INFO     Scheduler       - Log rotation completed. Archived: server.log.2025-07-13.gz
+[2025-07-14 00:36:40] ERROR    DatabasePool    - Slow query detected (4.8s): SELECT * FROM orders WHERE status='pending'
+[2025-07-14 00:37:55] INFO     CacheService    - Cache eviction triggered. 312 stale keys removed.
+[2025-07-14 00:38:20] CRITICAL StorageService  - Disk usage on /var/log exceeded 90% threshold. Immediate action required.
+[2025-07-14 00:39:00] INFO     WebServer       - POST /api/checkout 200 OK (145ms)
+[2025-07-14 00:40:30] INFO     UserService     - User 'eve' logged in successfully from 172.16.0.5
+[2025-07-14 00:42:00] INFO     DiskMonitor     - Disk usage at 91% on /var/log — alert sent to ops@company.com
+[2025-07-14 00:43:15] ERROR    AuthModule      - JWT token validation failed for request to /api/admin — token expired
+[2025-07-14 00:44:00] INFO     WebServer       - GET /api/users/42 200 OK (22ms)
+[2025-07-14 00:45:00] INFO     Scheduler       - Metrics snapshot saved to InfluxDB
