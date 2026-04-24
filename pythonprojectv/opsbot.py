@@ -2,14 +2,14 @@ import os
 import re
 from datetime import datetime
 
-# ── Settings ──────────────────────────────────────────────
+# Settings 
 LOG_FILE    = "server.log"
 KEYWORDS    = ["CRITICAL", "ERROR", "FAILED LOGIN"]
 TODAY       = datetime.now().strftime("%Y-%m-%d")
 REPORT_FILE = "security_alert_" + TODAY + ".txt"
 
 
-# ── Step 1: Read the log file line by line ─────────────────
+#  Step 1: Read the log file line by line 
 def read_log():
     lines = []
     with open(LOG_FILE, "r") as file:
@@ -19,7 +19,7 @@ def read_log():
     return lines
 
 
-# ── Step 2: Filter out INFO noise, keep only alerts ────────
+# Step 2: Filter out INFO noise, keep only alerts 
 def filter_alerts(lines):
     alerts = []
     for line in lines:
@@ -32,7 +32,7 @@ def filter_alerts(lines):
     return alerts
 
 
-# ── Step 3: Count how many times each keyword appears ──────
+#  Step 3: Count how many times each keyword appears
 def count_frequencies(alerts):
     counts = {
         "CRITICAL"    : 0,
@@ -47,7 +47,7 @@ def count_frequencies(alerts):
     return counts
 
 
-# ── Step 4: Write the security alert report to a file ──────
+#  Step 4: Write the security alert report to a file 
 def write_report(alerts, counts):
     with open(REPORT_FILE, "w") as file:
 
@@ -78,13 +78,13 @@ def write_report(alerts, counts):
     print("Report saved to:", REPORT_FILE)
 
 
-# ── Step 5: Confirm the file was created using os module ───
+#  Step 5: Confirm the file was created using os module 
 def check_file():
     size = os.path.getsize(REPORT_FILE)
     print("File size      :", size, "bytes")
 
 
-# ── Main: Run all steps in order ───────────────────────────
+#  Main: Run all steps in order
 print("=" * 50)
 print("  OpsBot - Security Log Analyser")
 print("=" * 50)
